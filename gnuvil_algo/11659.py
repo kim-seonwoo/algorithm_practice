@@ -8,7 +8,14 @@ input = sys.stdin.readline
 
 N, M = map(int, input().split())
 numbers = list(map(int, input().split()))
+pre = [0]
+mysum = 0
+
+for i in range(N):
+    mysum += numbers[i]
+    pre.append(mysum)
+
 
 for _ in range(M):
     i, j = map(int, input().split())
-    print(sum(numbers[0:j]) - sum(numbers[0:i - 1]))
+    print(pre[j] - pre[i - 1])
