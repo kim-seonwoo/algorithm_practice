@@ -1,10 +1,5 @@
 import sys
-from collections import deque
-
 sys.stdin = open('input.txt', 'r')
-sys.setrecursionlimit(10**6)
-
-input = sys.stdin.readline  
 
 n = int(input())
 nums = list(map(int, input().split()))
