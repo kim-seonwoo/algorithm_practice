@@ -20,7 +20,7 @@ for target in arr:
     while lo + 1 < hi:
         mid = (lo + hi) // 2
         if numbers[mid] < target:  
-            lo = mid 
+            lo = mid    
         else:  
             hi = mid
     
