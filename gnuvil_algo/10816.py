@@ -9,22 +9,23 @@ user_numbers = list(map(int, input().split()))
 m = int(input())
 provided_numbers = list(map(int, input().split()))
 
-result = [0 for _ in range(m)]
+number_count = {num: 0 for num in provided_numbers}
 
-provided_numbers.sort()
+sorted_keys = sorted(number_count.keys())
 
 for target in user_numbers:
     lo = -1
     hi = m - 1
-    while lo + 1 < hi :
+
+    while lo + 1 < hi:
         mid = (lo + hi) // 2
-        if provided_numbers[mid] > target:
-            hi = mid
-        else:
+        if sorted_keys[mid] < target:
             lo = mid
-    if provided_numbers[lo] == target:
-        result[lo] += 1
+        else:
+            hi = mid
 
+    if sorted_keys[hi] == target:
+        number_count[sorted_keys[hi]] += 1
 
-
+result = [number_count[num] for num in provided_numbers]
 print(result)
