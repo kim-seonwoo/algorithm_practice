@@ -28,4 +28,5 @@ for target in user_numbers:
         number_count[sorted_keys[hi]] += 1
 
 result = [number_count[num] for num in provided_numbers]
-print(result)
+
+print(" ".join(map(str, result)))
