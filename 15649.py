@@ -10,7 +10,6 @@ seq = []
 visited = [0 for _ in range(n + 1)]
 
 def sol(k):
-
     # 종료 조건
     if k == m:
         for i in seq:
