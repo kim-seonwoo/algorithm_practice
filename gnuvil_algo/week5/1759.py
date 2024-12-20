@@ -28,7 +28,7 @@ def check(arr):
     else:
         return False
 
-def sol(k):
+def sol(k, index):
     if k == n:
         if check(seq):
             for s in seq:
@@ -37,17 +37,16 @@ def sol(k):
             return
     
     for i in range(n):
-        for number in range(i, n):
-            if visited[number] == 1:
-                continue
+        if visited[i]: continue
+        # if seq != [] 
 
         visited[i] = 1
         seq.append(chars[i])
 
-        sol(k + 1)
+        sol(k + 1, i)
 
         visited[i] = 0
         seq.pop()
 
 
-sol(0)
+sol(0, 0)

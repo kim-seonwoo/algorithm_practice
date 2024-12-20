@@ -13,6 +13,7 @@ dp = [-1 for _ in range(n)]
 dp[0] = numbers[0]
 
 for i in range(1, n):
+    dp[i] = numbers[i] 
     for j in range(i):
         if numbers[j] < numbers[i]:  
             dp[i] = max(dp[i], dp[j] + numbers[i])
