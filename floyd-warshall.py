@@ -19,7 +19,7 @@ for i in range(M):
 for k in range(1, N + 1):
     for i in range(1, N + 1):
         for j in range(1, N + 1):
-            if [i][j] > distance[i][k] + distance[k][j]:
+            if distance[i][j] > distance[i][k] + distance[k][j]:
                 distance[i][j] = distance[i][k] + distance[k][j]
 
 # 출력
